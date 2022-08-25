@@ -40,6 +40,8 @@ app.get('*', (request, response) => {
 });
 
 
+// Error Handling Here
+
 class Forecast {
   constructor(day) {
     this.date = day.datetime;
