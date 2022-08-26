@@ -38,11 +38,11 @@ app.get('/weather', async (request, response, next) => {
 
 app.get('/movie', async (request, response, next) => {
   try {
-    let city = request.query.city_name;
-    let url = `https://api.themoviedb.org/3/movie/550?api_key=${process.env.MOVIE_API_KEY}&title=${city}`;
-    let weatherObj = await axios.get(url);
-    console.log(weatherObj.data);
-    let selectedCity = weatherObj.data.data.map(day => new Forecast(day));
+    let city = request.query;
+    let url = `https://api.themoviedb.org/search/3/movie?api_key=${process.env.MOVIE_API_KEY}&query=${city}`;
+    let movieObj = await axios.get(url);
+    console.log(movieObj.data);
+    let selectedCity = movieObj.data.results.map(movie => new Movie(movie));
     response.send(selectedCity);
   } catch(err) {
     next(err);
@@ -74,8 +74,10 @@ class Forecast {
 
 class Movie {
   constructor(movie) {
-    this.title = movie.title;
+    this.original_title = movie.original_title;
     this.overview = movie.overview;
+    this.imgPath = movie.poster_path ? 'https://image.tmdb.org/t/p/w500' + movie.poster_path : '';
+    this.id = movie.id;
   }
 }
 
