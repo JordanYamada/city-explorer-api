@@ -20,13 +20,25 @@ JavaScript, Express.js, Node, Heroku
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-## Time Estimate
+## Time Estimate Lab07
 
 Name of feature: Building the server
 
 Estimate of time needed to complete: 4 hours
 
 Start time: 3:00pm
+
+Finish time: 9:00pm(next day)
+
+Actual time needed to complete:9 hours
+
+## Time Estimate Lab 09
+
+Name of feature: Building the server
+
+Estimate of time needed to complete: 8 hours
+
+Start time: 2:30
 
 Finish time: _____
 
